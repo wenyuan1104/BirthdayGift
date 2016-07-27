@@ -7,12 +7,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:layoutAnimation="@anim/layout_animation"
         android:orientation="vertical" >
 
         <TextView
+            android:id="@+id/jumpShow"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -27,7 +28,8 @@
             android:gravity="center_horizontal"
             android:text="那么一个永远"
             android:textColor="#666"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/textView"/>
 
         <TextView
             android:layout_width="fill_parent"
@@ -41,53 +43,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
-        <com.wenyuan.birthdaygift.view.ImageSlidePanel
-            android:id="@+id/image_slide_panel"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-
-            <com.wenyuan.birthdaygift.view.AntiAliasTextView
-                android:layout_width="225dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
-                android:background="@drawable/image01"
-                android:gravity="center"
-                android:text="这个是Text1"
-                android:visibility="invisible" />
-
-            <com.wenyuan.birthdaygift.view.AntiAliasTextView
-                android:layout_width="225dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
-                android:background="@drawable/image02"
-                android:gravity="center"
-                android:text="这个是Text2"
-                android:visibility="invisible" />
-
-            <com.wenyuan.birthdaygift.view.AntiAliasTextView
-                android:layout_width="225dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
-                android:background="@drawable/image03"
-                android:gravity="center"
-                android:text="这个是Text3"
-                android:visibility="invisible" />
-
-            <com.wenyuan.birthdaygift.view.AntiAliasTextView
-                android:layout_width="225dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
-                android:background="@drawable/image04"
-                android:gravity="center"
-                android:text="这个是Text4"
-                android:visibility="invisible" />
-        </com.wenyuan.birthdaygift.view.ImageSlidePanel>
+        android:layout_height="fill_parent">
 
         <View
             android:id="@+id/left_shake"
@@ -135,6 +91,56 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true" />
+
+        <com.wenyuan.birthdaygift.view.ImageSlidePanel
+            android:id="@+id/image_slide_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <com.wenyuan.birthdaygift.view.AntiAliasTextView
+                android:layout_width="225dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
+                android:background="@drawable/image01"
+                android:gravity="center"
+                android:text="这个是Text1"
+                android:visibility="invisible" />
+
+            <com.wenyuan.birthdaygift.view.AntiAliasTextView
+                android:layout_width="225dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
+                android:background="@drawable/image02"
+                android:gravity="center"
+                android:text="这个是Text2"
+                android:visibility="invisible" />
+
+            <com.wenyuan.birthdaygift.view.AntiAliasTextView
+                android:layout_width="225dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
+                android:background="@drawable/image03"
+                android:gravity="center"
+                android:text="这个是Text3"
+                android:visibility="invisible" />
+
+            <com.wenyuan.birthdaygift.view.AntiAliasTextView
+                android:layout_width="225dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/imgpanel_margin_bottom"
+                android:background="@drawable/image04"
+                android:gravity="center"
+                android:text="这个是Text4"
+                android:visibility="invisible" />
+
+        </com.wenyuan.birthdaygift.view.ImageSlidePanel>
     </RelativeLayout>
 
 </LinearLayout>

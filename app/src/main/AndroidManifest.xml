@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".activity.SlideActivity">
         </activity>
+        <activity android:name=".activity.PullActivity">
+        </activity>
     </application>
 
 </manifest>

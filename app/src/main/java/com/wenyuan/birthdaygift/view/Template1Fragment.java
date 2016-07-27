@@ -110,6 +110,7 @@ public class Template1Fragment extends Fragment {
         leftShake.setVisibility(View.VISIBLE);
         rightShake.setVisibility(View.VISIBLE);
         bottomShake.setVisibility(View.VISIBLE);
+
     }
 
     private void delayShowSlidePanel() {
