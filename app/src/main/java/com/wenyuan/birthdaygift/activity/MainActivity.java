@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.cooltechworks.views.ScratchTextView;
 import com.tandong.swichlayout.SwitchLayout;
+import com.wenyuan.birthdaygift.AppVar;
+import com.wenyuan.birthdaygift.MyService;
 import com.wenyuan.birthdaygift.R;
 import com.wenyuan.birthdaygift.dalong.FancyCoverFlow;
 import com.wenyuan.birthdaygift.dalong.Item;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppVar.getInstance().setActivity("0");
         SwitchLayout.ScaleBig(this, false, null);
         initView();
         initLisenter();
@@ -51,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initView() {
         mScratchTextView = (ScratchTextView) findViewById(R.id.scratchtextview);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this, MyService.class));
     }
 
     /**

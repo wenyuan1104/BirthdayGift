@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.wenyuan.birthdaygift"
-          xmlns:app="http://schemas.android.com/apk/res-auto"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,8 @@
         <activity android:name=".activity.MainActivity">
         </activity>
         <activity
-            android:name=".activity.WelcomeActivity">
+            android:name=".activity.WelcomeActivity"
+            android:theme="@android:style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -23,9 +24,14 @@
         </activity>
         <activity android:name=".activity.PullActivity">
         </activity>
-        <activity
-            android:name=".activity.LoginActivity">
+        <activity android:name=".activity.LoginActivity">
         </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

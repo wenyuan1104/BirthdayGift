@@ -20,7 +20,7 @@ public class MyAdapter extends BaseQuickAdapter<String> {
     @Override
     protected void convert(BaseViewHolder baseViewHolder, String s) {
         baseViewHolder.setText(R.id.text_item, s);
-        int item = baseViewHolder.getLayoutPosition();
+        int item = baseViewHolder.getPosition();
         int flag = 0;
         switch (item) {
             case 1:
@@ -42,7 +42,8 @@ public class MyAdapter extends BaseQuickAdapter<String> {
         if (flag != 0) {
             baseViewHolder.setVisible(R.id.image_item, true);
             baseViewHolder.setImageResource(R.id.image_item, flag);
-        }
+        }else
+            baseViewHolder.setVisible(R.id.image_item,false);
     }
 
 }

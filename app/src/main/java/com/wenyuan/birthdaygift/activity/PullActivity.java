@@ -31,7 +31,7 @@ public class PullActivity extends AppCompatActivity {
         mAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
-                Toast.makeText(PullActivity.this, "进去干什么呢！！！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PullActivity.this, "进去干什么呢！！！\n" + i, Toast.LENGTH_SHORT).show();
             }
         });
     }

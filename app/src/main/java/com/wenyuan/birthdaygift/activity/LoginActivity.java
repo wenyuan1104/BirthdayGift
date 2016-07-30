@@ -12,13 +12,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.tandong.swichlayout.BaseEffects;
-import com.tandong.swichlayout.SwichLayoutInterFace;
-import com.tandong.swichlayout.SwitchLayout;
+import com.wenyuan.birthdaygift.AppVar;
+import com.wenyuan.birthdaygift.MyService;
 import com.wenyuan.birthdaygift.R;
 import com.wenyuan.birthdaygift.testheart.HeartView;
 
-public class LoginActivity extends AppCompatActivity implements SwichLayoutInterFace {
+public class LoginActivity extends AppCompatActivity {
 
     EditText mEditText;
     private HeartView heartView;
@@ -28,27 +27,27 @@ public class LoginActivity extends AppCompatActivity implements SwichLayoutInter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setEnterSwichLayout();
+        AppVar.getInstance().setActivity("1");
         mEditText = (EditText) findViewById(R.id.user_password);
         heartView = (HeartView) findViewById(R.id.surfaceView);
         mLinearLayout = (LinearLayout) findViewById(R.id.linearlayout_login);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.alpha);
         mLinearLayout.setAnimation(animation);
+        doStart();
     }
 
     /**
-     *
      * @param view
      */
     public void checkPassword(View view) {
-       String pass = mEditText.getText().toString().trim();
-        if (null != pass && !"".equals(pass)){
+        String pass = mEditText.getText().toString().trim();
+        if (null != pass && !"".equals(pass)) {
             Intent intent = new Intent();
             if ("1234".equals(pass)) {
                 intent.setClass(this, MainActivity.class);
             } else if ("123".equals(pass)) {
                 intent.setClass(this, MainActivity.class);
-            }else {
+            } else {
                 new AlertDialog.Builder(this)
                         .setCancelable(false)
                         .setTitle("可惜不是你")
@@ -65,23 +64,11 @@ public class LoginActivity extends AppCompatActivity implements SwichLayoutInter
             }
             startActivity(intent);
             finish();
-        }else {
+        } else {
             Toast.makeText(this, "输入啊！光看这干嘛！", Toast.LENGTH_SHORT).show();
         }
-        
-    }
-
-    @Override
-    public void setEnterSwichLayout() {
-        SwitchLayout.getSlideFromLeft(this, false,
-                BaseEffects.getLinearInterEffect());
-    }
-
-    @Override
-    public void setExitSwichLayout() {
 
     }
-
 
     //@Override
     //public boolean onTouchEvent(MotionEvent event) {
@@ -94,4 +81,19 @@ public class LoginActivity extends AppCompatActivity implements SwichLayoutInter
     //    heartView.reDraw();
     //
     //}
+
+    /**
+     * 开启服务
+     */
+    public void doStart() {
+        startService(new Intent(this, MyService.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        String flag = AppVar.getInstance().getActivity();
+        if ("1".equals(flag))
+            stopService(new Intent(this, MyService.class));
+    }
 }
