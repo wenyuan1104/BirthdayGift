@@ -8,10 +8,11 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.cooltechworks.views.ScratchTextView;
+import com.tandong.swichlayout.SwitchLayout;
 import com.wenyuan.birthdaygift.R;
-import com.wenyuan.birthdaygift.adapter.MyFancyCoverFlowAdapter;
-import com.wenyuan.birthdaygift.bean.Item;
 import com.wenyuan.birthdaygift.dalong.FancyCoverFlow;
+import com.wenyuan.birthdaygift.dalong.Item;
+import com.wenyuan.birthdaygift.dalong.MyFancyCoverFlowAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SwitchLayout.ScaleBig(this, false, null);
         initView();
         initLisenter();
         initImageView();

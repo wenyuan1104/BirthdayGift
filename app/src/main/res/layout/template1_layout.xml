@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="有没有"
-            android:textColor="#222"
+            android:textColor="#E91E63"
             android:textSize="24sp" />
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
             android:text="那么一个永远"
-            android:textColor="#666"
+            android:textColor="#F06292"
             android:textSize="20sp"
             android:id="@+id/textView"/>
 
@@ -37,7 +37,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
             android:text="永远不改变"
-            android:textColor="#aaa"
+            android:textColor="#F8BBD0"
             android:textSize="16sp" />
     </LinearLayout>
 

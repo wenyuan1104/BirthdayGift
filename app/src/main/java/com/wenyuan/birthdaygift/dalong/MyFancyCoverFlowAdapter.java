@@ -1,4 +1,4 @@
-package com.wenyuan.birthdaygift.adapter;
+package com.wenyuan.birthdaygift.dalong;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,9 +8,6 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.wenyuan.birthdaygift.R;
-import com.wenyuan.birthdaygift.bean.Item;
-import com.wenyuan.birthdaygift.dalong.FancyCoverFlow;
-import com.wenyuan.birthdaygift.dalong.FancyCoverFlowAdapter;
 
 import java.util.List;
 

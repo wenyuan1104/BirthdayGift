@@ -1,4 +1,4 @@
-package com.wenyuan.birthdaygift.bean;
+package com.wenyuan.birthdaygift.dalong;
 
 /**
  * Created by xiaoyu on 15/12/14.

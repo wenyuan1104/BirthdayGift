@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@android:color/white"
+    android:id="@+id/activity_login"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.birthdaygift.activity.LoginActivity">
+
+
+    <com.wenyuan.birthdaygift.testheart.HeartView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="112dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_login"
+        android:gravity="center"
+        android:paddingLeft="32dp"
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/inputbox_bg"
+        android:layout_below="@+id/surfaceView"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/user_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:focusable="true"
+            android:hint="亲，输入你的专享密码！"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:paddingLeft="3dp"
+            android:singleLine="true"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+
+        <TextView
+            android:onClick="checkPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@drawable/action_selector"
+            android:text="开 启"
+            android:gravity="right"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

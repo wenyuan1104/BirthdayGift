@@ -9,6 +9,7 @@
     tools:context="com.wenyuan.birthdaygift.activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        app:elevation="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -31,7 +32,7 @@
     <com.wenyuan.birthdaygift.dalong.FancyCoverFlow
         android:id="@+id/fancyCoverFlow"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="280dp"
         android:layout_marginTop="48dp"/>
 
     <TextView
@@ -49,18 +50,21 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:gravity="center"
-        android:text="生日快乐"
+        android:text="生 日 快 乐"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"/>
 
-    <Button
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="32dp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_margin="16dp"
         android:onClick="jumpNext"
         android:text="TA们都在"
-        android:textSize="20sp"/>
+        android:textColor="@drawable/skip1_selector"
+        android:textSize="18sp"/>
 
 
 </LinearLayout>
