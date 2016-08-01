@@ -32,4 +32,13 @@
         <item name="colorAccent">#50bdbdbd</item>
     </style>
 
+    <style name="Theme.AppCompat.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/translucence</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <color name="translucence">#99000000</color>
 </resources>

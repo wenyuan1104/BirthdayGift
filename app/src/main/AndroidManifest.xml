@@ -32,6 +32,11 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:name=".activity.BActivity">
+        </activity>
     </application>
 
 </manifest>

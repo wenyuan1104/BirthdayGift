@@ -1,9 +1,9 @@
 package com.wenyuan.birthdaygift;
 
 /**
+ * 全局变量类
  * Created by www22_000 on 2016/7/30 23:23.
  */
-
 public class AppVar {
 
     private static AppVar sAppVar;

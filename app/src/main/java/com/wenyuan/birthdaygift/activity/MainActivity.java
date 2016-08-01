@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRevealed(ScratchTextView scratchTextView) {
                 //刮刮乐完成刮完之后的自动操作
-                Toast.makeText(MainActivity.this, "刮完了哦！", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "刮完了哦！", Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(MainActivity.this,BActivity.class));
             }
         });
     }
