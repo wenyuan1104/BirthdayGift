@@ -34,8 +34,15 @@
         </service>
 
         <activity
-            android:theme="@style/Theme.AppCompat.Translucent"
-            android:name=".activity.BActivity">
+            android:name=".activity.BActivity"
+            android:theme="@style/Theme.AppCompat.Translucent">
+        </activity>
+        <activity
+            android:name=".activity.VideoActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name=".dalong.Main2Activity">
         </activity>
     </application>
 

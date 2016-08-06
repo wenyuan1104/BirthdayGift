@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.wenyuan.birthdaygift.R;
+import com.wenyuan.birthdaygift.view.CircleImageView;
 
 import java.util.List;
 
@@ -31,12 +32,14 @@ public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
             convertView.setLayoutParams(new FancyCoverFlow.LayoutParams(width / 3, FancyCoverFlow.LayoutParams.WRAP_CONTENT));
             holder = new ViewHolder();
             holder.product_name = (TextView) convertView.findViewById(R.id.name);
+            holder.mImageView = (CircleImageView) convertView.findViewById(R.id.profile_image);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
         final Item item = getItem(position);
         holder.product_name.setText(item.getName());
+        holder.mImageView.setImageBitmap(item.getBitmap());
         return convertView;
     }
 
@@ -73,5 +76,6 @@ public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
 
     static class ViewHolder {
         TextView product_name;
+        CircleImageView mImageView;
     }
 }

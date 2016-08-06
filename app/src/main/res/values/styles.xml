@@ -40,5 +40,11 @@
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
 
+
+    <style name="Theme.AppCompat.Translucent_1">
+        <item name="android:windowBackground">@color/translucence_1</item>
+    </style>
+
     <color name="translucence">#99000000</color>
+    <color name="translucence_1">#00000000</color>
 </resources>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,8 +16,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.wenyuan.birthdaygift.R;
+import com.wenyuan.birthdaygift.utils.ScreenUtils;
 
 /**
  * ���ճ�Ҷ��ʹ��ϰ�ߣ�ÿһҳӦ����һ��ģ�壬���Դ˴�����ʱʹ����Template�ؼ���
@@ -28,10 +32,12 @@ public class Template1Fragment extends Fragment {
 
     private Handler handler;
     private ImageSlidePanel slidePanel;
+    AntiAliasTextView t4;
 
     private View leftShake, rightShake, bottomShake;
     private View leftClickArea, rightClickArea;
     private OnClickListener btnListener;
+    private int ids[] = {R.drawable.t1,R.drawable.t2,R.drawable.t2,R.drawable.t2,R.drawable.t2,R.drawable.t2};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +46,12 @@ public class Template1Fragment extends Fragment {
         slidePanel = (ImageSlidePanel) rootView
                 .findViewById(R.id.image_slide_panel);
 
+        //for (int i = 0; i < ids.length; i++) {
+        //    int id = ids[i];
+        //    AntiAliasTextView lView = initWidgets(id);
+        //    slidePanel.addView(lView);
+        //}
+
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -47,6 +59,14 @@ public class Template1Fragment extends Fragment {
                 initAnimations();
             }
         };
+
+        t4 = (AntiAliasTextView) rootView.findViewById(R.id.t4);
+        t4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         leftShake = rootView.findViewById(R.id.left_shake);
         rightShake = rootView.findViewById(R.id.right_shake);
@@ -73,6 +93,28 @@ public class Template1Fragment extends Fragment {
 
         delayShowSlidePanel();
         return rootView;
+    }
+
+    /**
+     * 动态加载布局
+     */
+    private AntiAliasTextView initWidgets(int id) {
+        float width = 225;
+        float heiht = 300;
+        AntiAliasTextView view = new AntiAliasTextView(getActivity());
+
+        FrameLayout.LayoutParams p = (FrameLayout.LayoutParams) view.getLayoutParams();
+        p.bottomMargin = (int) ScreenUtils.dpToPx(getActivity(), 16);
+        p.gravity = Gravity.CENTER;
+        view.setLayoutParams(p);
+
+        view.setWidth((int) ScreenUtils.dpToPx(getActivity(), width));
+        view.setHeight((int) ScreenUtils.dpToPx(getActivity(), heiht));
+        view.setGravity(Gravity.CENTER);
+        view.setBackgroundResource(id);
+        view.setVisibility(View.VISIBLE);
+
+        return view;
     }
 
     private void initAnimations() {

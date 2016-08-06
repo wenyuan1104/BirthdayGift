@@ -1,13 +1,13 @@
 package com.wenyuan.birthdaygift.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import com.ant.liao.GifView;
 import com.wenyuan.birthdaygift.R;
 
-public class BActivity extends AppCompatActivity {
+public class BActivity extends Activity {
 
 
     GifView mGifView;
